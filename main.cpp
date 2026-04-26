@@ -251,7 +251,7 @@ public:
             money -= runnerCost;
             runnerCount++;
             // 计算新小人的空闲位置（在屏幕左侧自动排列）
-            Vector2 idlePos = {50, 100 + (runners.size() * 60)};
+            Vector2 idlePos = {50, static_cast<float>(100 + (runners.size() * 60))};
             // 安全地计算新颜色
             unsigned char r = (runners.back().color.r + 20) % 256;
             unsigned char g = (runners.back().color.g + 10) % 256;
