@@ -1,8 +1,0 @@
-[
-{
-  "directory": "E:/c++projects/WspRunningGame/build",
-  "command": "c:/Users/tqh20/Downloads/w64devkit/bin/g++.exe  @CMakeFiles/game.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles/game.dir/main.cpp.obj -c E:/c++projects/WspRunningGame/main.cpp",
-  "file": "E:/c++projects/WspRunningGame/main.cpp",
-  "output": "CMakeFiles/game.dir/main.cpp.obj"
-}
-]

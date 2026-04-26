@@ -1,3 +1,0 @@
-E:/c++projects/WspRunningGame/build/CMakeFiles/game.dir
-E:/c++projects/WspRunningGame/build/CMakeFiles/edit_cache.dir
-E:/c++projects/WspRunningGame/build/CMakeFiles/rebuild_cache.dir
