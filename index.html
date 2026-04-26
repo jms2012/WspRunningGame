@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSP Running Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        h1 {
+            color: #333;
+        }
+        .game-info {
+            margin: 20px 0;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .download-section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .screenshot {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px 0;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WSP Running Game</h1>
+            <p>一款使用C++和Raylib开发的跑圈点击放置类游戏</p>
+        </header>
+        
+        <section class="game-info">
+            <h2>游戏特色</h2>
+            <ul class="feature-list">
+                <li>可控制的小人角色，沿圆形路径自动循环跑动</li>
+                <li>经济系统：每完成一圈获得虚拟货币</li>
+                <li>升级系统：提升小人速度和赚钱效率</li>
+                <li>购买系统：添加更多小人同时跑动</li>
+                <li>监工系统：每升一级可以使1个小人永久自动跑圈</li>
+                <li>小人跑完圈后会在屏幕左侧自动排列</li>
+                <li>直观的用户界面和视觉效果</li>
+            </ul>
+        </section>
+        
+        <section class="screenshot-section">
+            <h2>游戏截图</h2>
+            <p>游戏截图将在这里显示</p>
+            <!-- 这里可以添加游戏截图 -->
+        </section>
+        
+        <section class="download-section">
+            <h2>下载游戏</h2>
+            <p>点击下方按钮下载最新版本的游戏</p>
+            <a href="https://github.com/yourusername/WspRunningGame/releases" class="button">下载游戏</a>
+        </section>
+        
+        <section class="installation-guide">
+            <h2>安装指南</h2>
+            <h3>1. 安装Raylib库</h3>
+            <p><strong>方法1：项目文件夹安装（推荐）</strong></p>
+            <ol>
+                <li>从 <a href="https://www.raylib.com/" target="_blank">https://www.raylib.com/</a> 下载Raylib</li>
+                <li>解压到项目文件夹，并重命名为 `raylib`</li>
+                <li>确保路径 `./raylib/include/raylib.h` 存在</li>
+            </ol>
+            <p><strong>方法2：系统安装</strong></p>
+            <ol>
+                <li>从 <a href="https://www.raylib.com/" target="_blank">https://www.raylib.com/</a> 下载Raylib</li>
+                <li>安装到 `C:\raylib\` 目录</li>
+                <li>确保路径 `C:\raylib\include\raylib.h` 存在</li>
+            </ol>
+            
+            <h3>2. 安装CMake</h3>
+            <ol>
+                <li>从 <a href="https://cmake.org/download/" target="_blank">https://cmake.org/download/</a> 下载CMake</li>
+                <li>安装CMake并添加到系统PATH</li>
+            </ol>
+            
+            <h3>3. 安装编译器</h3>
+            <p><strong>选项1：Visual Studio 2022 Community（推荐）</strong></p>
+            <ul>
+                <li>从 <a href="https://visualstudio.microsoft.com/vs/community/" target="_blank">https://visualstudio.microsoft.com/vs/community/</a> 下载</li>
+                <li>安装时选择"使用C++的桌面开发"</li>
+            </ul>
+            <p><strong>选项2：MinGW-w64（GCC）</strong></p>
+            <ul>
+                <li>从 <a href="https://sourceforge.net/projects/mingw-w64/" target="_blank">https://sourceforge.net/projects/mingw-w64/</a> 下载</li>
+                <li>安装到 `C:\MinGW-w64\`</li>
+                <li>添加 `C:\MinGW-w64\mingw64\bin` 到系统PATH</li>
+            </ul>
+        </section>
+        
+        <section class="build-guide">
+            <h2>构建和运行</h2>
+            <h3>使用CMake构建（推荐）</h3>
+            <ol>
+                <li>双击运行 `build_cmake.ps1` 脚本</li>
+                <li>或在PowerShell中执行：</li>
+            </ol>
+            <pre><code>powershell -ExecutionPolicy Bypass -File build_cmake.ps1</code></pre>
+            
+            <h3>直接编译</h3>
+            <ol>
+                <li>双击运行 `build.bat` 脚本</li>
+                <li>或在命令提示符中执行：</li>
+            </ol>
+            <pre><code>build.bat</code></pre>
+        </section>
+        
+        <footer>
+            <p>© 2026 WSP Running Game. 所有权利保留。</p>
+        </footer>
+    </div>
+</body>
+</html>
