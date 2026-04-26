@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -12,15 +12,46 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Set up Emscripten
+        uses: mymindstorm/setup-emsdk@v11
+        with:
+          version: 3.1.43
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake build-essential
+
+      - name: Build Raylib for Emscripten
+        run: |
+          git clone https://github.com/raysan5/raylib.git
+          cd raylib
+          mkdir -p build
+          cd build
+          emcmake cmake .. -DPLATFORM=Web
+          emmake make -j4
+          sudo make install
+
+      - name: Build game for Web
+        run: |
+          mkdir -p build-web
+          cd build-web
+          emcmake cmake .. -DPLATFORM=Web
+          emmake make -j4
+          mkdir -p ../web
+          cp game.html ../web/
+          cp game.js ../web/
+          cp game.wasm ../web/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./web
           publish_branch: gh-pages
