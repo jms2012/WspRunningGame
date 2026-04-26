@@ -30,6 +30,10 @@ jobs:
 
       - name: Build Raylib for Emscripten
         run: |
+          # 清理已存在的raylib目录
+          if [ -d "raylib" ]; then
+            rm -rf raylib
+          fi
           git clone https://github.com/raysan5/raylib.git
           cd raylib
           mkdir -p build
