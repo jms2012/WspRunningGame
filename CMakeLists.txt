@@ -9,7 +9,7 @@ if(EMSCRIPTEN)
     message(STATUS "Using Emscripten for Web build")
     # 设置Emscripten编译选项
     set(CMAKE_EXECUTABLE_SUFFIX ".html")
-    set(EMSCriptEN_LINKER_FLAGS "-s USE_GLFW=3 -s ASYNCIFY -s ALLOW_MEMORY_GROWTH=1 -s WASM=1 -s EXPORT_NAME=\"createWspGame\" -s MODULARIZE=1")
+    set(EMSCriptEN_LINKER_FLAGS "-s USE_GLFW=3 -s ASYNCIFY -s ALLOW_MEMORY_GROWTH=1 -s WASM=1")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${EMSCriptEN_LINKER_FLAGS}")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${EMSCriptEN_LINKER_FLAGS}")
 
